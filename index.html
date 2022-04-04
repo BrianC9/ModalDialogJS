@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal JS</title>
+    <style>
+      dialog {
+        border: 1px solid;
+        border-radius: 15px;
+      }
+      dialog::backdrop {
+        background-size: cover;
+        background-color: rgb(183, 185, 185);
+        filter: blur(50px);
+        -webkit-filter: blur();
+      }
+    </style>
+  </head>
+  <body>
+    <dialog>
+      <h2>Modal nativo con Javascript</h2>
+      <p>Con mejoras de accesibilidad y amplia compatibilidad</p>
+      <button id="cerrarModal">Cerrar modal</button>
+    </dialog>
+    <button id="mostrarModal">Abrir modal</button>
+    <script>
+      const modal = document.querySelector("dialog");
+      const btnCerrar = document.querySelector("#cerrarModal");
+      const btnMostrar = document.querySelector("#mostrarModal");
+
+      btnMostrar.addEventListener("click", () => modal.showModal());
+      btnCerrar.addEventListener("click", () => modal.close());
+
+      console.log({ modal });
+    </script>
+  </body>
+</html>
